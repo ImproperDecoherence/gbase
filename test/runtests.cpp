@@ -7,14 +7,14 @@
 
 int main(int argc, char *argv[]) {
 
-    GLogger &logger = GLogger::getInstance();
+    gbase::GLogger &logger = gbase::GLogger::getInstance();
     logger.enableLogger(true);
     logger.addFilter("noteValue");
 
     try {
         gtest::TestFramework::getInstance().executeTests();
-    } catch (const GException &exception) {
-        cout << CoutColor::Magenta << exception << endl;
+    } catch (const gbase::GException &exception) {
+        std::cout << gbase::CoutColor::Magenta << exception << std::endl;
     }
 
     return 0;

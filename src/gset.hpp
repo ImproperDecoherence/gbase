@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <algorithm>
 #include <functional>
 #include <ranges>
@@ -5,7 +8,7 @@
 
 #include "gbasictypes.hpp"
 
-#pragma once
+namespace gbase {
 
 template <typename Type> class GSet : private std::set<Type> {
   private:
@@ -159,4 +162,6 @@ constexpr GSet<Type> operator-(const GSet<Type> &set, const Range &range) {
 template <typename Type> constexpr std::ostream &operator<<(std::ostream &s, const GSet<Type> &v) {
     v.print(s);
     return s;
+}
+
 }

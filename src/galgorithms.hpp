@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <algorithm>
 #include <numeric>
 #include <ranges>
@@ -5,7 +8,7 @@
 #include "gbasictypes.hpp"
 #include "gvector.hpp"
 
-#pragma once
+namespace gbase {
 
 template <std::ranges::range Range> constexpr auto combinations(const Range &input, Size subsequenceLength) {
     using ValueType = typename std::ranges::range_value_t<Range>;
@@ -43,3 +46,5 @@ template <std::ranges::range Range> constexpr auto combinations(const Range &inp
 
     return result;
 }
+
+} // namespace gbase

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-namespace test {
+namespace gbase::test {
 
 GTEST(GAlgorithmsTest) {
     const GVector d1 = {'A', 'B', 'C', 'D'};
@@ -15,4 +15,4 @@ GTEST(GAlgorithmsTest) {
     GCHECK("Combinations", r1, e1);
 }
 
-} // namespace test
+} // namespace gbase::test

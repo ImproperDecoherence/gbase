@@ -3,7 +3,7 @@
 #include "gvector.hpp"
 #include "testframework.hpp"
 
-namespace test {
+namespace gbase::test {
 
 GTEST(GVectorTest) {
     GVector v1 = {'A', 'B', 'C', 'D'};
@@ -42,4 +42,4 @@ GTEST(GVectorTest) {
     GCHECK("Extend 2", toBeExtended, GVector{'B', 'A', 'D', 'C', 'D', 'E', 'F'});
 }
 
-} // namespace test
+} // namespace gbase::test

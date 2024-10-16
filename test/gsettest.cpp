@@ -3,7 +3,7 @@
 #include "gset.hpp"
 #include "testframework.hpp"
 
-namespace test {
+namespace gbase::test {
 
 GTEST(GSetTest) {
     GSet v1 = {'A', 'B', 'C', 'D'};
@@ -31,4 +31,4 @@ GTEST(GSetTest) {
     GCHECK("Extend 2", toBeExtended, GSet{'A', 'B', 'C', 'D', 'E', 'F'});
 }
 
-} // namespace test
+} // namespace gbase::test

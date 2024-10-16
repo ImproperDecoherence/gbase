@@ -1,8 +1,11 @@
+
+#pragma once
+
 #include <functional>
 
 #include "gvector.hpp"
 
-#pragma once
+namespace gbase {
 
 class GSignal {
   public:
@@ -35,3 +38,5 @@ class GSignal {
   private:
     GVector<std::function<void()>> connections_;
 };
+
+}

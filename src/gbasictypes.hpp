@@ -1,17 +1,19 @@
 
+#pragma once
+
 #include <limits>
 #include <ranges>
 #include <stdexcept>
 #include <string>
 #include <type_traits>
 
-#pragma once
+namespace gbase {
 
-typedef unsigned Unsigned;
-typedef int Integer;
-typedef char Char;
-typedef unsigned char Byte;
-typedef size_t Size;
+using Unsigned = unsigned;
+using Integer = int;
+using Char = char;
+using Byte = unsigned char;
+using Size = size_t;
 using String = std::string;
 
 constexpr Integer integerMax = std::numeric_limits<int>::max();
@@ -29,3 +31,5 @@ concept IsRangeOfRangeOf =
 
 template <typename InputIt, typename Type>
 concept InputIteratorOf = std::input_iterator<InputIt> && std::same_as<std::iter_value_t<InputIt>, Type>;
+
+}

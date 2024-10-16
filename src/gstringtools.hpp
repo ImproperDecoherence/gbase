@@ -1,6 +1,9 @@
-#include <string>
 
 #pragma once
+
+#include <string>
+
+namespace gbase {
 
 template <typename... Args> constexpr String concatToString(Args &&...args) {
     std::ostringstream oss;
@@ -13,4 +16,6 @@ void constexpr eraseSubString(String &target, const String &subString) {
     if (substringPos != String::npos) {
         target.erase(substringPos, subString.length());
     }
+}
+
 }

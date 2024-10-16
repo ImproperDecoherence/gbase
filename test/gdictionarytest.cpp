@@ -4,7 +4,7 @@
 #include "gexceptions.hpp"
 #include "testframework.hpp"
 
-namespace test {
+namespace gbase::test {
 
 GTEST(GDictionaryTest) {
     const GDictionary<Integer, String> d1{{7, "seven"}, {11, "eleven"}, {21, "twentyone"}};
@@ -41,4 +41,4 @@ GTEST(GDictionaryTest) {
     GCHECK("Key vector", v2, expectedValues);
 }
 
-} // namespace test
+} // namespace gbase::test

@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <ostream>
 #include <sstream>
 #include <stdexcept>
@@ -5,11 +8,11 @@
 #include "gbasictypes.hpp"
 #include "gstringtools.hpp"
 
-#pragma once
+namespace gbase {
 
-typedef std::exception GException;
-typedef std::out_of_range GOutOfRange;
-typedef std::invalid_argument GInvalidArgument;
+using GException = std::exception;
+using GOutOfRange = std::out_of_range;
+using GInvalidArgument = std::invalid_argument;
 
 #define GTHROW(exc, ...)                                                                                     \
     do {                                                                                                     \
@@ -26,12 +29,14 @@ struct GExceptionInfo {
     String type;
 };
 
-constexpr std::ostream &operator<<(std::ostream &os, const GExceptionInfo &gei) {
+} // namespace gbase
+
+constexpr std::ostream &operator<<(std::ostream &os, const gbase::GExceptionInfo &gei) {
     os << gei.type << '(' << gei.message << ')';
     return os;
 };
 
-constexpr std::ostream &operator<<(std::ostream &os, const GException &exception) {
+constexpr std::ostream &operator<<(std::ostream &os, const gbase::GException &exception) {
     os << exception.what();
     return os;
 };

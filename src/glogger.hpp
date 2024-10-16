@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <iostream>
 #include <vector>
 
@@ -6,6 +9,8 @@
 #include "gstringtools.hpp"
 
 using namespace std;
+
+namespace gbase {
 
 class GLogger {
   public:
@@ -61,9 +66,11 @@ class GLogger {
     } while (false);
 
 #define GLOG_WARNING(...)                                                                                    \
-    do {                                                                                                     \
+    {                                                                                                        \
         std::ostringstream oss;                                                                              \
         oss << __FILE__ << " | " << __func__ << " | ";                                                       \
         oss << concatToString(__VA_ARGS__);                                                                  \
         GLogger::getInstance().warning(oss.str());                                                           \
-    } while (false);
+    }
+
+} // namespace gbase

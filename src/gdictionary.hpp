@@ -1,10 +1,13 @@
+
+#pragma once
+
 #include <map>
 #include <ostream>
 
 #include "gbasictypes.hpp"
 #include "gvector.hpp"
 
-#pragma once
+namespace gbase {
 
 template <typename Key, typename Value> class GDictionary : private std::map<Key, Value> {
 
@@ -103,4 +106,6 @@ template <typename Key, typename Value>
 std::ostream &operator<<(std::ostream &os, const GDictionary<Key, Value> &dict) {
     dict.print(os);
     return os;
+}
+
 }

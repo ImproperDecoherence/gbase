@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <iomanip>
 #include <iostream>
 #include <vector>
@@ -5,7 +8,7 @@
 #include "gbasictypes.hpp"
 #include "gexceptions.hpp"
 
-#pragma once
+namespace gbase {
 
 namespace CoutColor {
 constexpr String Black{"\033[30m"};
@@ -46,3 +49,5 @@ constexpr void printTableRow(const std::vector<Integer> &columnWidths, const std
 
     std::cout.flags(savedCoutFlags); // restore cout formatting
 }
+
+} // namespace gbase

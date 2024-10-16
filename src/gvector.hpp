@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <algorithm>
 #include <functional>
 #include <ranges>
@@ -5,8 +8,7 @@
 
 #include "gbasictypes.hpp"
 
-#pragma once
-
+namespace gbase {
 template <typename Type> class GVector : private std::vector<Type> {
   private:
     using base = std::vector<Type>;
@@ -150,4 +152,6 @@ template <typename Type> class GVector : private std::vector<Type> {
 template <typename Type> constexpr std::ostream &operator<<(std::ostream &s, const GVector<Type> &v) {
     v.print(s);
     return s;
+}
+
 }
