@@ -5,6 +5,7 @@
 #include <functional>
 #include <ranges>
 #include <vector>
+#include <iostream>
 
 #include "gbasictypes.hpp"
 
@@ -131,6 +132,28 @@ template <typename Type> class GVector : private std::vector<Type> {
         GVector result{*this};
         std::ranges::sort(result, compareFn);
         return result;
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param steps Rotates to the right for positive steps and to the left for negative steps.
+     */
+    void constexpr rotate(Integer steps) {
+        steps = -steps;
+        steps = steps % size();
+        std::cout << steps << std::endl;
+
+        if (steps == 0) {
+            return;
+        }
+
+        if (steps > 0) {
+            std::rotate(begin(), begin() + steps, end());
+            return;
+        }
+
+        std::rotate(begin(), begin() + (size() - steps), end());
     }
 
     void constexpr print(std::ostream &target) const {

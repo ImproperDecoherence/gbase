@@ -40,6 +40,15 @@ GTEST(GVectorTest) {
     const GVector extendVector{'E', 'F'};
     toBeExtended += extendVector;
     GCHECK("Extend 2", toBeExtended, GVector{'B', 'A', 'D', 'C', 'D', 'E', 'F'});
+
+    GVector rotateVector{'A', 'B', 'C', 'D'};
+    rotateVector.rotate(+1);
+    GCHECK("Rotate right", rotateVector, GVector {'D', 'A', 'B', 'C'});
+    rotateVector.rotate(-2);
+    GCHECK("Rotate left", rotateVector, GVector {'B', 'C', 'D', 'A'});
+    rotateVector.rotate(8);
+    GCHECK("Rotate wrap around", rotateVector, GVector {'B', 'C', 'D', 'A'});
+
 }
 
 } // namespace gbase::test
