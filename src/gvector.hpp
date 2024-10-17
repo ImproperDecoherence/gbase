@@ -142,7 +142,6 @@ template <typename Type> class GVector : private std::vector<Type> {
     void constexpr rotate(Integer steps) {
         steps = -steps;
         steps = steps % size();
-        std::cout << steps << std::endl;
 
         if (steps == 0) {
             return;
