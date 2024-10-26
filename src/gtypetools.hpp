@@ -23,4 +23,12 @@ template <typename Type> constexpr String typeToString(const Type &toConvert) {
 
 constexpr String typeToString(const bool &toConvert) { return boolToString(toConvert); }
 
+template <typename Type> String typeName(const Type &type) {
+    std::stringstream ss;
+    ss << typeid(decltype(type)).name() << std::endl;
+    return ss.str();
 }
+
+#define CLASS_NAME() (typeid(*this).name())
+
+} // namespace gbase

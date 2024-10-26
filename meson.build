@@ -12,6 +12,7 @@ test_includes = ['gtest/src']
 
 test_sources = [
     'test/galgorithmstest.cpp',
+    'test/genumeratetest.cpp',
     'test/gdictionarytest.cpp',
     'test/gsettest.cpp',
     'test/gvectortest.cpp',

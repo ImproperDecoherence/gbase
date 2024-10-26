@@ -2,6 +2,7 @@
 #pragma once
 
 #include <map>
+#include <optional>
 #include <ostream>
 
 #include "gbasictypes.hpp"
@@ -66,9 +67,11 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
 
     constexpr Size maxSize() const { return base::max_size(); };
 
-    // operator[] is customized to raise OutOfRange exception when index out of range
+    // const operator[] is customized to raise OutOfRange exception when index out of range
     constexpr const Value &operator[](const Key &key) const { return at(key); }
-    constexpr Value &operator[](const Key &key) { return at(key); }
+
+    using base::operator[];
+    // constexpr Value &operator[](const Key &key) { return at(key); }
 
     constexpr auto keys() const { return *this | std::ranges::views::keys; }
 
@@ -82,6 +85,16 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
     constexpr GVector<Value> valueVector() const {
         auto v = values() | std::ranges::to<std::vector<Value>>();
         return GVector<Value>{v};
+    }
+
+    constexpr std::optional<Key> findKeyOfValue(const Value &value) const {
+        for (const auto &pair : *this) {
+            if (pair.second == value) {
+                return pair.first;
+            }
+        }
+
+        return std::nullopt;
     }
 
     constexpr void print(std::ostream &target) const {
@@ -108,4 +121,4 @@ std::ostream &operator<<(std::ostream &os, const GDictionary<Key, Value> &dict) 
     return os;
 }
 
-}
+} // namespace gbase

@@ -39,6 +39,11 @@ GTEST(GDictionaryTest) {
     auto v2 = d1.valueVector();
     const GVector<String> expectedValues = {String{"seven"}, String{"eleven"}, String{"twentyone"}};
     GCHECK("Key vector", v2, expectedValues);
+
+    auto key = d1.findKeyOfValue(String("eleven"));
+    GCHECK("Key of value 1", *key, 11);
+
+    
 }
 
 } // namespace gbase::test

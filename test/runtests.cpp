@@ -8,8 +8,7 @@
 int main(int argc, char *argv[]) {
 
     gbase::GLogger &logger = gbase::GLogger::getInstance();
-    logger.enableLogger(true);
-    logger.addFilter("noteValue");
+    logger.setLogLevel(gbase::GLogger::LogLevel::None);
 
     try {
         gtest::TestFramework::getInstance().executeTests();

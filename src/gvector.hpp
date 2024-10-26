@@ -3,9 +3,9 @@
 
 #include <algorithm>
 #include <functional>
+#include <iostream>
 #include <ranges>
 #include <vector>
-#include <iostream>
 
 #include "gbasictypes.hpp"
 
@@ -135,24 +135,25 @@ template <typename Type> class GVector : private std::vector<Type> {
     }
 
     /**
-     * @brief 
-     * 
+     * @brief
+     *
      * @param steps Rotates to the right for positive steps and to the left for negative steps.
      */
     void constexpr rotate(Integer steps) {
-        steps = -steps;
-        steps = steps % size();
+        steps = steps % static_cast<Integer>(size());
 
         if (steps == 0) {
             return;
         }
 
         if (steps > 0) {
-            std::rotate(begin(), begin() + steps, end());
+            // Rotate right
+            std::rotate(rbegin(), rbegin() + steps, rend());
             return;
         }
 
-        std::rotate(begin(), begin() + (size() - steps), end());
+        // Rotate left
+        std::rotate(begin(), begin() - steps, end());
     }
 
     void constexpr print(std::ostream &target) const {
@@ -176,4 +177,4 @@ template <typename Type> constexpr std::ostream &operator<<(std::ostream &s, con
     return s;
 }
 
-}
+} // namespace gbase

@@ -81,9 +81,9 @@ template <typename Type> class GSet : private std::set<Type> {
     using base::size;
     using base::swap;
 
-    auto operator<=>(const GSet &other) const = default;
-    bool operator==(const GSet &other) const = default;
-    bool operator!=(const GSet &other) const = default;
+    constexpr auto operator<=>(const GSet &other) const = default;
+    constexpr bool operator==(const GSet &other) const = default;
+    constexpr bool operator!=(const GSet &other) const = default;
 
     constexpr Size maxSize() const { return base::max_size(); };
 
@@ -93,14 +93,22 @@ template <typename Type> class GSet : private std::set<Type> {
 
     constexpr void operator-=(const Type &newValue) { erase(newValue); }
 
+    constexpr bool isSupersetOf(const GSet &set) const {
+        return std::includes(this->begin(), this->end(), set.begin(), set.end());
+    }
+
+    constexpr bool isSubsetOf(const GSet &set) const {
+        return std::includes(set.begin(), set.end(), this->begin(), this->end());
+    }
+
     template <RangeOf<Type> Range> constexpr void extend(const Range &values) {
-        for (const auto value : values) {
+        for (const auto &value : values) {
             insert(value);
         }
     }
 
     template <RangeOf<Type> Range> constexpr void erase(const Range &values) {
-        for (auto value : values) {
+        for (const auto &value : values) {
             erase(value);
         }
     }
@@ -108,7 +116,7 @@ template <typename Type> class GSet : private std::set<Type> {
     template <RangeOf<Type> Range> constexpr void operator+=(const Range &values) { extend(values); }
 
     constexpr void extend(std::initializer_list<Type> initList) {
-        for (auto value : initList) {
+        for (const auto &value : initList) {
             insert(value);
         }
     }
@@ -164,4 +172,4 @@ template <typename Type> constexpr std::ostream &operator<<(std::ostream &s, con
     return s;
 }
 
-}
+} // namespace gbase

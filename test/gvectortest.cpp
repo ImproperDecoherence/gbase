@@ -49,6 +49,19 @@ GTEST(GVectorTest) {
     rotateVector.rotate(8);
     GCHECK("Rotate wrap around", rotateVector, GVector {'B', 'C', 'D', 'A'});
 
+    GVector rotateVectorInt{2, 5, 9};
+    rotateVectorInt.rotate(+1);
+    GCHECK("Rotate +1", rotateVectorInt, GVector {9, 2, 5});
+    rotateVectorInt.rotate(+1);
+    GCHECK("Rotate +2", rotateVectorInt, GVector {5, 9, 2});
+    rotateVectorInt.rotate(+1);
+    GCHECK("Rotate +3", rotateVectorInt, GVector {2, 5, 9});
+
+    rotateVectorInt.rotate(+2);    
+    GCHECK("Rotate +2", rotateVectorInt, GVector {5, 9, 2});
+    rotateVectorInt.rotate(+1);
+    GCHECK("Rotate +3", rotateVectorInt, GVector {2, 5, 9});
+
 }
 
 } // namespace gbase::test

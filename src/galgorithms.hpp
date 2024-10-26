@@ -6,6 +6,7 @@
 #include <ranges>
 
 #include "gbasictypes.hpp"
+#include "gset.hpp"
 #include "gvector.hpp"
 
 namespace gbase {
@@ -15,7 +16,7 @@ template <std::ranges::range Range> constexpr auto combinations(const Range &inp
 
     const auto inputSize = std::ranges::distance(input);
 
-    GVector<GVector<ValueType>> result;
+    GVector<GSet<ValueType>> result;
     GVector<Size> indices(subsequenceLength);
 
     // Initialize indices to [0, 1, 2, ..., subsequenceLength-1]
@@ -23,9 +24,9 @@ template <std::ranges::range Range> constexpr auto combinations(const Range &inp
 
     do {
         // Create combination using current indices
-        GVector<ValueType> combination;
+        GSet<ValueType> combination;
         for (Size i : indices) {
-            combination.pushBack(input[i]);
+            combination.extend(input[i]);
         }
         result.pushBack(combination);
 

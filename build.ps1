@@ -26,7 +26,7 @@ function Show-Help {
 # Function to clean the build directory
 function Clean {
     Write-Host "Cleaning build directory..."
-    meson -C builddir clean
+    meson compile --clean -C builddir
 }
 
 # Function to rebuild the build directory
