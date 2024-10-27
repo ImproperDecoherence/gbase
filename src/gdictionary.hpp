@@ -10,8 +10,10 @@
 
 namespace gbase {
 
+/**
+ * @brief A specialization of the std::map.
+ */
 template <typename Key, typename Value> class GDictionary : private std::map<Key, Value> {
-
     using base = std::map<Key, Value>;
 
   public:
@@ -67,36 +69,55 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
 
     constexpr Size maxSize() const { return base::max_size(); };
 
-    // const operator[] is customized to raise OutOfRange exception when index out of range
+    /**
+     * @brief Customized to raise OutOfRange exception when index out of range
+     */
     constexpr const Value &operator[](const Key &key) const { return at(key); }
 
     using base::operator[];
-    // constexpr Value &operator[](const Key &key) { return at(key); }
 
+    /**
+     * @brief Returns a view with all keys.
+     */
     constexpr auto keys() const { return *this | std::ranges::views::keys; }
 
+    /**
+     * @brief Returns a view with all values.
+     */
     constexpr auto values() const { return *this | std::ranges::views::values; }
 
+    /**
+     * @brief Returns a vector with all keys.
+     */
     constexpr GVector<Key> keyVector() const {
         auto v = keys() | std::ranges::to<std::vector<Key>>();
         return GVector<Key>{v};
     }
 
+    /**
+     * @brief Returns a vector with all values.
+     */
     constexpr GVector<Value> valueVector() const {
         auto v = values() | std::ranges::to<std::vector<Value>>();
         return GVector<Value>{v};
     }
 
+    /**
+     * @brief Searches for the first key with given value.
+     * @return The found key as a std::optional, or std::nullopt if no key was found.
+     */
     constexpr std::optional<Key> findKeyOfValue(const Value &value) const {
         for (const auto &pair : *this) {
             if (pair.second == value) {
                 return pair.first;
             }
         }
-
         return std::nullopt;
     }
 
+    /**
+     * @brief Prints a textual representaion of the dictionary.
+     */
     constexpr void print(std::ostream &target) const {
         target << '[';
 

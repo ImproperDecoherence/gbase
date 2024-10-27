@@ -6,15 +6,27 @@
 #include <ranges>
 
 #include "gbasictypes.hpp"
+#include "gexceptions.hpp"
 #include "gset.hpp"
 #include "gvector.hpp"
 
 namespace gbase {
 
+/**
+ * @brief Finds all combinations of the input values.
+ *
+ * @param input A range with the input values.
+ * @param subsequenceLength The length of each combination.
+ * @return A vector of sets where each set is an unique combination of the input.
+ */
 template <std::ranges::range Range> constexpr auto combinations(const Range &input, Size subsequenceLength) {
     using ValueType = typename std::ranges::range_value_t<Range>;
 
     const auto inputSize = std::ranges::distance(input);
+
+    if (subsequenceLength > static_cast<Size>(inputSize)) {
+        GTHROW(GInvalidArgument, "Subsequence length must be smaller or equal to the input length.")
+    }
 
     GVector<GSet<ValueType>> result;
     GVector<Size> indices(subsequenceLength);

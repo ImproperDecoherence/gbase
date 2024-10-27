@@ -10,6 +10,10 @@
 #include "gbasictypes.hpp"
 
 namespace gbase {
+
+/**
+ * @brief Template class based on std::vector but with some additions and modificatons.
+ */
 template <typename Type> class GVector : private std::vector<Type> {
   private:
     using base = std::vector<Type>;
@@ -77,10 +81,20 @@ template <typename Type> class GVector : private std::vector<Type> {
     bool operator==(const GVector &other) const = default;
     bool operator!=(const GVector &other) const = default;
 
-    // operator[] is customized to raise OutOfRange exception when index out of range
+    /**
+     * @brief Custimized to raise an exception when index is out of range.
+     */
     const Type &operator[](const Size &index) const { return at(index); }
+
+    /**
+     * @brief Custimized to raise an exception when index is out of range.
+     */
     Type &operator[](const Size &index) { return at(index); }
 
+    /**
+     * @brief Searches for a value in the vector.
+     * @return The index of the first value found, or -1 if the value was not found.
+     */
     constexpr Integer find(const Type &value) const {
         for (Size i = 0; i < size(); ++i) {
             if (at(i) == value) {
@@ -91,43 +105,80 @@ template <typename Type> class GVector : private std::vector<Type> {
         return -1;
     }
 
+    /**
+     * @brief Appends the provided value to the end of the vector.
+     */
     constexpr void extend(const Type &newValue) { pushBack(newValue); }
 
+    /**
+     * @brief Appends the provided value to the end of the vector.
+     */
     constexpr void operator+=(const Type &newValue) { extend(newValue); }
 
+    /**
+     * @brief Appends the provided value to a copy of this vector and returns the result.
+     */
     constexpr GVector<Type> operator+(const Type &newValue) {
         GVector<Type> copy{*this};
         copy.extend(newValue);
         return copy;
     }
 
+    /**
+     * @brief Appends the provided range to the end of the vector.
+     */
     template <RangeOf<Type> Range> constexpr void extend(const Range &values) {
         insert(end(), values.begin(), values.end());
     }
 
+    /**
+     * @brief Appends the provided range to the end of the vector.
+     */
     template <RangeOf<Type> Range> constexpr void operator+=(const Range &values) { extend(values); }
 
-    constexpr void extend(std::initializer_list<Type> initList) {
-        insert(end(), initList.begin(), initList.end());
-    }
-
-    constexpr void operator+=(std::initializer_list<Type> initList) { extend(initList); }
-
+    /**
+     * @brief Appends the provided range to a copy of this vector and returns the result.
+     */
     template <RangeOf<Type> Range> constexpr GVector<Type> operator+(const Range &values) const {
         GVector<Type> copy{*this};
         copy.extend(values);
         return copy;
     }
 
+    /**
+     * @brief Appends the provided initializer list to the end of the vector.
+     */
+    constexpr void extend(std::initializer_list<Type> initList) {
+        insert(end(), initList.begin(), initList.end());
+    }
+
+    /**
+     * @brief Appends the provided initializer list to the end of the vector.
+     */
+    constexpr void operator+=(std::initializer_list<Type> initList) { extend(initList); }
+
+    /**
+     * @brief Appends the provided initializer list to a copy of this vector and returns the result.
+     */
     constexpr const GVector<Type> operator+(std::initializer_list<Type> initList) const {
         GVector<Type> copy{*this};
         copy.insert(copy.end(), initList.begin(), initList.end());
     }
 
+    /**
+     * @brief Sorts the contents of this vector.
+     *
+     * @param compareFn The default sort function is 'a < b', i.e. ascending order.
+     */
     void constexpr sort(std::function<bool(Type, Type)> compareFn = defaultCompare) {
         std::ranges::sort(*this, compareFn);
     }
 
+    /**
+     * @brief Returns a sorted copy of this vector.
+     *
+     * @param compareFn The default sort function is 'a < b', i.e. ascending order.
+     */
     GVector<Type> constexpr sort(std::function<bool(Type, Type)> compareFn = defaultCompare) const {
         GVector result{*this};
         std::ranges::sort(result, compareFn);
@@ -135,7 +186,7 @@ template <typename Type> class GVector : private std::vector<Type> {
     }
 
     /**
-     * @brief
+     * @brief Circular rotation of the contents of the vector.
      *
      * @param steps Rotates to the right for positive steps and to the left for negative steps.
      */
@@ -156,6 +207,9 @@ template <typename Type> class GVector : private std::vector<Type> {
         std::rotate(begin(), begin() - steps, end());
     }
 
+    /**
+     * @brief Prints a textual representation of the vector.
+     */
     void constexpr print(std::ostream &target) const {
         target << '[';
 

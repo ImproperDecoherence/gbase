@@ -14,6 +14,16 @@ using GException = std::exception;
 using GOutOfRange = std::out_of_range;
 using GInvalidArgument = std::invalid_argument;
 
+/**
+ * @def GTHROW(exc, ...)
+ * @brief Throws an exception of type 'exc' and captures the filename, the line number and the name of the
+ * function in the message of the exception.
+ *
+ * Example usage:
+ * @code
+ * GTHROW(GInvalidArgument, "Value must be less than 3: ", value);
+ * @endcode
+ */
 #define GTHROW(exc, ...)                                                                                     \
     do {                                                                                                     \
         std::ostringstream oss;                                                                              \
@@ -22,6 +32,9 @@ using GInvalidArgument = std::invalid_argument;
         throw exc(oss.str());                                                                                \
     } while (false);
 
+/**
+ * @brief Captures the message and name of given exception.
+ */
 struct GExceptionInfo {
     explicit GExceptionInfo(const GException &e) : message{e.what()}, type{typeid(e).name()} {}
 

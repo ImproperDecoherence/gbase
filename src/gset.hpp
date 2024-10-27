@@ -10,6 +10,9 @@
 
 namespace gbase {
 
+/**
+ * @brief A customized std::set.
+ */
 template <typename Type> class GSet : private std::set<Type> {
   private:
     using base = std::set<Type>;
@@ -87,44 +90,80 @@ template <typename Type> class GSet : private std::set<Type> {
 
     constexpr Size maxSize() const { return base::max_size(); };
 
+    /**
+     * @brief Inserts a value into the set.
+     */
     constexpr void extend(const Type &newValue) { insert(newValue); }
 
-    constexpr void operator+=(const Type &newValue) { extend(newValue); }
-
-    constexpr void operator-=(const Type &newValue) { erase(newValue); }
-
-    constexpr bool isSupersetOf(const GSet &set) const {
-        return std::includes(this->begin(), this->end(), set.begin(), set.end());
-    }
-
-    constexpr bool isSubsetOf(const GSet &set) const {
-        return std::includes(set.begin(), set.end(), this->begin(), this->end());
-    }
-
+    /**
+     * @brief Inserts a range of values into the set.
+     */
     template <RangeOf<Type> Range> constexpr void extend(const Range &values) {
         for (const auto &value : values) {
             insert(value);
         }
     }
 
-    template <RangeOf<Type> Range> constexpr void erase(const Range &values) {
-        for (const auto &value : values) {
-            erase(value);
-        }
-    }
-
-    template <RangeOf<Type> Range> constexpr void operator+=(const Range &values) { extend(values); }
-
+    /**
+     * @brief Inserts an initializer list of values into the set.
+     */
     constexpr void extend(std::initializer_list<Type> initList) {
         for (const auto &value : initList) {
             insert(value);
         }
     }
 
+    /**
+     * @brief Inserts a value into the set.
+     */
+    constexpr void operator+=(const Type &newValue) { extend(newValue); }
+
+    /**
+     * @brief Inserts a range of values into the set.
+     */
+    template <RangeOf<Type> Range> constexpr void operator+=(const Range &values) { extend(values); }
+
+    /**
+     * @brief Inserts an initializer list of values into the set.
+     */
     constexpr void operator+=(std::initializer_list<Type> initList) { extend(initList); }
 
+    /**
+     * @brief Removes a range of values from the set.
+     */
+    template <RangeOf<Type> Range> constexpr void erase(const Range &values) {
+        for (const auto &value : values) {
+            erase(value);
+        }
+    }
+
+    /**
+     * @brief Removes a value from the set.
+     */
+    constexpr void operator-=(const Type &newValue) { erase(newValue); }
+
+    /**
+     * @brief Removes a range of values from the set.
+     */
     template <RangeOf<Type> Range> constexpr void operator-=(const Range &values) { erase(values); }
 
+    /**
+     * @brief Tests if this set is a superset of given set.
+     */
+    constexpr bool isSupersetOf(const GSet &set) const {
+        return std::includes(this->begin(), this->end(), set.begin(), set.end());
+    }
+
+    /**
+     * @brief Tests if this set is a subset of given set.
+     */
+    constexpr bool isSubsetOf(const GSet &set) const {
+        return std::includes(set.begin(), set.end(), this->begin(), this->end());
+    }
+
+    /**
+     * @brief Prints a text representaion of the set.
+     */
     void constexpr print(std::ostream &target) const {
         target << '[';
 
@@ -141,18 +180,27 @@ template <typename Type> class GSet : private std::set<Type> {
     }
 };
 
+/**
+ * @brief Returns a copy of set with given value inserted.
+ */
 template <typename Type> constexpr GSet<Type> operator+(const GSet<Type> &set, const Type &value) {
     GSet<Type> copy{set};
     copy += value;
     return copy;
 }
 
+/**
+ * @brief Returns a copy of set with given value removed.
+ */
 template <typename Type> constexpr GSet<Type> operator-(const GSet<Type> &set, const Type &value) {
     GSet<Type> copy{set};
     copy -= value;
     return copy;
 }
 
+/**
+ * @brief Returns a copy of set with given range of values inserted.
+ */
 template <typename Type, RangeOf<Type> Range>
 constexpr GSet<Type> operator+(const GSet<Type> &set, const Range &range) {
     GSet<Type> copy{set};
@@ -160,6 +208,9 @@ constexpr GSet<Type> operator+(const GSet<Type> &set, const Range &range) {
     return copy;
 }
 
+/**
+ * @brief Returns a copy of set with given range of values inserted.
+ */
 template <typename Type, RangeOf<Type> Range>
 constexpr GSet<Type> operator-(const GSet<Type> &set, const Range &range) {
     GSet<Type> copy{set};
