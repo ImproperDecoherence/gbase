@@ -74,7 +74,10 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
      */
     constexpr const Value &operator[](const Key &key) const { return at(key); }
 
-    using base::operator[];
+    /**
+     * @brief Customized to raise OutOfRange exception when index out of range
+     */
+    constexpr Value &operator[](const Key &key) { return at(key); }
 
     /**
      * @brief Returns a view with all keys.
@@ -85,6 +88,11 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
      * @brief Returns a view with all values.
      */
     constexpr auto values() const { return *this | std::ranges::views::values; }
+
+    /**
+     * @brief Returns a view with all values.
+     */
+    constexpr auto values() { return *this | std::ranges::views::values; }
 
     /**
      * @brief Returns a vector with all keys.

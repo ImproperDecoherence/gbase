@@ -200,12 +200,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span> {                                                                                                     \</div>
+<b>Value:</b><div class="fragment"><div class="line">    {                                                                                                        \</div>
 <div class="line">        std::ostringstream oss;                                                                              \</div>
 <div class="line">        oss &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot; | line: &quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; | &quot;</span>;                            \</div>
 <div class="line">        oss &lt;&lt; concatToString(__VA_ARGS__);                                                                  \</div>
 <div class="line">        <span class="keywordflow">throw</span> exc(oss.str());                                                                                \</div>
-<div class="line">    } <span class="keywordflow">while</span> (<span class="keyword">false</span>);</div>
+<div class="line">    }</div>
 </div><!-- fragment -->
 <p>Throws an exception of type 'exc' and captures the filename, the line number and the name of the function in the message of the exception. </p>
 <p>Example usage: </p><div class="fragment"><div class="line"><a class="code hl_define" href="#a5e101258271dead9c22973e0844cc1cc">GTHROW</a>(GInvalidArgument, <span class="stringliteral">&quot;Value must be less than 3: &quot;</span>, value);</div>
