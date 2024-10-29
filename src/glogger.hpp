@@ -14,6 +14,18 @@ namespace gbase {
 
 /**
  * @brief Singleton class which can be used to handle application logging.
+ *
+ * Example usage:
+ *
+ * @code
+ * gbase::GLogger &logger = gbase::GLogger::getInstance();
+ * logger.setLogLevel(gbase::GLogger::LogLevel::None);
+ *
+ * GLOG_INFO("Chords in database: ", db.size());
+ * GLOG_WARNING("Could not open: ", fileName);
+ * GLOG_DETAILS("Adding chord: ", chord);
+ * @endcode
+ *
  */
 class GLogger {
   public:
@@ -127,6 +139,16 @@ class GLogger {
 /**
  * @brief Help class to temporary change the current log level within the current scope. The previous log
  * level is restored when the class instance is destroyed.
+ *
+ * Example usage:
+ * @code
+ * {
+ *   GLocalLogLevel(GLogger::LogLevel::None);
+ *   // No logging in this scope.
+ * }
+ * // Logging will return to global log level setting setting here
+ * @endcode
+ *
  */
 class GLocalLogLevel {
   public:

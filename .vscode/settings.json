@@ -1,6 +1,6 @@
 {
     "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
-    "C_Cpp.default.compileCommands": "c:\\Users\\gusto\\OneDrive\\Documents\\Projects\\gchordlab-cpp\\subprojects\\gbase\\builddir/compile_commands.json",
+    "C_Cpp.default.compileCommands": "c:\\Users\\gusto\\OneDrive\\Documents\\Projects\\gchordlab-cpp\\subprojects\\gmtheory\\subprojects\\gbase\\builddir/compile_commands.json",
     "files.associations": {
         "array": "cpp",
         "atomic": "cpp",

@@ -1,0 +1,3 @@
+<map id="gbase::GLocalLogLevel" name="gbase::GLocalLogLevel">
+<area shape="rect" id="Node000001" title="Help class to temporary change the current log level within the current scope. The previous log level..." alt="" coords="5,5,155,96"/>
+</map>

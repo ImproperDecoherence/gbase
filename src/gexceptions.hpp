@@ -25,12 +25,12 @@ using GInvalidArgument = std::invalid_argument;
  * @endcode
  */
 #define GTHROW(exc, ...)                                                                                     \
-    do {                                                                                                     \
+    {                                                                                                        \
         std::ostringstream oss;                                                                              \
         oss << __FILE__ << " | " << __func__ << " | line: " << __LINE__ << " | ";                            \
         oss << concatToString(__VA_ARGS__);                                                                  \
         throw exc(oss.str());                                                                                \
-    } while (false);
+    }
 
 /**
  * @brief Captures the message and name of given exception.
