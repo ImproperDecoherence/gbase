@@ -2,6 +2,7 @@
 #include <ranges>
 
 #include "genumerate.hpp"
+#include "glogger.hpp"
 #include "gvector.hpp"
 #include "testframework.hpp"
 

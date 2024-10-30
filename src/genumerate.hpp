@@ -51,7 +51,7 @@ template <typename Range> class GEnumerate {
         constexpr bool operator!=(const iterator &other) const { return current_ != end_; }
 
       private:
-        Integer index_;
+        Integer index_{0};
         Iterator current_;
         Iterator end_;
     };
