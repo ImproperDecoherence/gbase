@@ -28,6 +28,14 @@ GTEST(GEnumerateTest) {
         GCHECK(value, integers[expectedIndex] + 2);
         ++expectedIndex;
     }
+
+    auto large = std::ranges::views::filter([](Integer i) { return i > 4; });
+    expectedIndex = 0;
+    for (const auto &[index, value] : GEnumerate(integers | large)) {
+        GCHECK(index, expectedIndex);
+        GCHECK(value, integers[expectedIndex + 4]);
+        ++expectedIndex;
+    }
 }
 
 } // namespace gbase::test

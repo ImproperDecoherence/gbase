@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gdictionary_0',['GDictionary',['../classgbase_1_1_g_dictionary.html#ab5b5edc68450ae9b89d9d98ddd9781e1',1,'gbase::GDictionary::GDictionary()=default'],['../classgbase_1_1_g_dictionary.html#acaa4d62f240a8d4bb8baf00bd34d0fe7',1,'gbase::GDictionary::GDictionary(std::initializer_list&lt; std::pair&lt; const Key, Value &gt; &gt; initList)'],['../classgbase_1_1_g_dictionary.html#a6c9b02f471daadc81a7a8fe57f036f30',1,'gbase::GDictionary::GDictionary(const std::map&lt; Key, Value &gt; &amp;m)']]],
-  ['genumerate_1',['GEnumerate',['../classgbase_1_1_g_enumerate.html#a80aa3e3c339e23497f7ae92f0e447547',1,'gbase::GEnumerate']]],
+  ['genumerate_1',['GEnumerate',['../classgbase_1_1_g_enumerate.html#a80aa3e3c339e23497f7ae92f0e447547',1,'gbase::GEnumerate::GEnumerate()'],['../namespacegbase.html#aa08f60ab177b1e44a495d2030a2c7a35',1,'gbase::GEnumerate()']]],
   ['getinstance_2',['getInstance',['../classgbase_1_1_g_logger.html#a75fd8bb95fa2652e1829d466c4abe9d4',1,'gbase::GLogger']]],
   ['gexceptioninfo_3',['GExceptionInfo',['../structgbase_1_1_g_exception_info.html#aeca33ef7de962271fe26bad8c033d4cc',1,'gbase::GExceptionInfo']]],
   ['glocallogfilter_4',['GLocalLogFilter',['../classgbase_1_1_g_local_log_filter.html#aed6e6433e5f20c62afc2e148f68b94f9',1,'gbase::GLocalLogFilter']]],

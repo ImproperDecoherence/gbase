@@ -11,7 +11,7 @@ var searchData=
   ['gbasictypes_2ehpp_8',['gbasictypes.hpp',['../gbasictypes_8hpp.html',1,'']]],
   ['gdictionary_9',['GDictionary',['../classgbase_1_1_g_dictionary.html',1,'gbase::GDictionary&lt; Key, Value &gt;'],['../classgbase_1_1_g_dictionary.html#ab5b5edc68450ae9b89d9d98ddd9781e1',1,'gbase::GDictionary::GDictionary()=default'],['../classgbase_1_1_g_dictionary.html#acaa4d62f240a8d4bb8baf00bd34d0fe7',1,'gbase::GDictionary::GDictionary(std::initializer_list&lt; std::pair&lt; const Key, Value &gt; &gt; initList)'],['../classgbase_1_1_g_dictionary.html#a6c9b02f471daadc81a7a8fe57f036f30',1,'gbase::GDictionary::GDictionary(const std::map&lt; Key, Value &gt; &amp;m)']]],
   ['gdictionary_2ehpp_10',['gdictionary.hpp',['../gdictionary_8hpp.html',1,'']]],
-  ['genumerate_11',['GEnumerate',['../classgbase_1_1_g_enumerate.html',1,'gbase::GEnumerate&lt; Range &gt;'],['../classgbase_1_1_g_enumerate.html#a80aa3e3c339e23497f7ae92f0e447547',1,'gbase::GEnumerate::GEnumerate()']]],
+  ['genumerate_11',['GEnumerate',['../classgbase_1_1_g_enumerate.html',1,'gbase::GEnumerate&lt; Range &gt;'],['../classgbase_1_1_g_enumerate.html#a80aa3e3c339e23497f7ae92f0e447547',1,'gbase::GEnumerate::GEnumerate()'],['../namespacegbase.html#aa08f60ab177b1e44a495d2030a2c7a35',1,'gbase::GEnumerate()']]],
   ['genumerate_2ehpp_12',['genumerate.hpp',['../genumerate_8hpp.html',1,'']]],
   ['getinstance_13',['getInstance',['../classgbase_1_1_g_logger.html#a75fd8bb95fa2652e1829d466c4abe9d4',1,'gbase::GLogger']]],
   ['gexception_14',['GException',['../namespacegbase.html#a5837e7bdd8852aad9db4f1c1f0190d4e',1,'gbase']]],
@@ -36,6 +36,5 @@ var searchData=
   ['gvector_33',['GVector',['../classgbase_1_1_g_vector.html',1,'gbase::GVector&lt; Type &gt;'],['../classgbase_1_1_g_vector.html#a3d280316791206633fd10a9339f8d161',1,'gbase::GVector::GVector(std::initializer_list&lt; Type &gt; initList)'],['../classgbase_1_1_g_vector.html#a1c97c9cdb2a73aa7d4d0183e55985f17',1,'gbase::GVector::GVector(InputIt first, InputIt last)'],['../classgbase_1_1_g_vector.html#a3aa720b0f844ea151d53c3dcfef4b35e',1,'gbase::GVector::GVector(const Range &amp;range)']]],
   ['gvector_2ehpp_34',['gvector.hpp',['../gvector_8hpp.html',1,'']]],
   ['gzipper_35',['GZipper',['../classgbase_1_1_g_zipper.html',1,'gbase::GZipper&lt; Range1, Range2 &gt;'],['../classgbase_1_1_g_zipper.html#ad00cd5c89a18b3728c83d39e360cc486',1,'gbase::GZipper::GZipper()'],['../namespacegbase.html#a82f554a0f787d6d775ebe6e0b240ae50',1,'gbase::GZipper()']]],
-  ['gzipper_2ehpp_36',['gzipper.hpp',['../gzipper_8hpp.html',1,'']]],
-  ['gzipper_3c_20std_3a_3aranges_3a_3aiota_5fview_3c_20integer_2c_20integer_20_3e_2c_20range_20_3e_37',['GZipper&lt; std::ranges::iota_view&lt; Integer, Integer &gt;, Range &gt;',['../classgbase_1_1_g_zipper.html',1,'gbase']]]
+  ['gzipper_2ehpp_36',['gzipper.hpp',['../gzipper_8hpp.html',1,'']]]
 ];
