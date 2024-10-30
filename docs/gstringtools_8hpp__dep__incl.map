@@ -1,12 +1,16 @@
 <map id="src/gstringtools.hpp" name="src/gstringtools.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="209,5,345,32"/>
-<area shape="rect" id="Node000002" href="$gexceptions_8hpp.html" title=" " alt="" coords="154,80,293,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,46,235,81,231,78,257,43"/>
-<area shape="rect" id="Node000005" href="$glogger_8hpp.html" title=" " alt="" coords="224,229,335,256"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="295,45,308,79,315,131,308,182,299,208,289,230,284,228,294,206,302,181,309,131,302,81,290,47"/>
-<area shape="rect" id="Node000003" href="$galgorithms_8hpp.html" title=" " alt="" coords="5,155,141,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,116,101,156,98,152,183,111"/>
-<area shape="rect" id="Node000004" href="$gprinttools_8hpp.html" title=" " alt="" coords="165,155,293,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="228,122,231,154,225,154,223,123"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="249,193,273,227,269,230,244,196"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="280,5,416,32"/>
+<area shape="rect" id="Node000002" href="$gexceptions_8hpp.html" title=" " alt="" coords="226,80,364,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="332,46,306,81,302,78,328,43"/>
+<area shape="rect" id="Node000005" href="$glogger_8hpp.html" title=" " alt="" coords="294,229,405,256"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="376,41,420,89,440,120,456,154,460,168,456,183,443,199,427,213,392,231,390,227,424,208,439,195,451,180,455,168,451,156,436,123,416,93,372,45"/>
+<area shape="rect" id="Node000003" href="$galgorithms_8hpp.html" title=" " alt="" coords="306,155,441,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,116,362,152,358,156,318,120"/>
+<area shape="rect" id="Node000004" href="$gprinttools_8hpp.html" title=" " alt="" coords="153,155,282,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="272,119,233,156,229,152,268,116"/>
+<area shape="rect" id="Node000006" href="$gzipper_8hpp.html" title=" " alt="" coords="18,155,129,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="243,114,113,157,112,151,241,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="255,187,328,226,325,231,252,191"/>
+<area shape="rect" id="Node000007" href="$genumerate_8hpp.html" title=" " alt="" coords="5,229,142,256"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="76,197,76,229,71,229,71,197"/>
 </map>

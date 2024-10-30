@@ -10,5 +10,6 @@ var searchData=
   ['gset_2ehpp_7',['gset.hpp',['../gset_8hpp.html',1,'']]],
   ['gstringtools_2ehpp_8',['gstringtools.hpp',['../gstringtools_8hpp.html',1,'']]],
   ['gtypetools_2ehpp_9',['gtypetools.hpp',['../gtypetools_8hpp.html',1,'']]],
-  ['gvector_2ehpp_10',['gvector.hpp',['../gvector_8hpp.html',1,'']]]
+  ['gvector_2ehpp_10',['gvector.hpp',['../gvector_8hpp.html',1,'']]],
+  ['gzipper_2ehpp_11',['gzipper.hpp',['../gzipper_8hpp.html',1,'']]]
 ];

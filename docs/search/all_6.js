@@ -34,5 +34,8 @@ var searchData=
   ['gthrow_31',['GTHROW',['../gexceptions_8hpp.html#a5e101258271dead9c22973e0844cc1cc',1,'gexceptions.hpp']]],
   ['gtypetools_2ehpp_32',['gtypetools.hpp',['../gtypetools_8hpp.html',1,'']]],
   ['gvector_33',['GVector',['../classgbase_1_1_g_vector.html',1,'gbase::GVector&lt; Type &gt;'],['../classgbase_1_1_g_vector.html#a3d280316791206633fd10a9339f8d161',1,'gbase::GVector::GVector(std::initializer_list&lt; Type &gt; initList)'],['../classgbase_1_1_g_vector.html#a1c97c9cdb2a73aa7d4d0183e55985f17',1,'gbase::GVector::GVector(InputIt first, InputIt last)'],['../classgbase_1_1_g_vector.html#a3aa720b0f844ea151d53c3dcfef4b35e',1,'gbase::GVector::GVector(const Range &amp;range)']]],
-  ['gvector_2ehpp_34',['gvector.hpp',['../gvector_8hpp.html',1,'']]]
+  ['gvector_2ehpp_34',['gvector.hpp',['../gvector_8hpp.html',1,'']]],
+  ['gzipper_35',['GZipper',['../classgbase_1_1_g_zipper.html',1,'gbase::GZipper&lt; Range1, Range2 &gt;'],['../classgbase_1_1_g_zipper.html#ad00cd5c89a18b3728c83d39e360cc486',1,'gbase::GZipper::GZipper()'],['../namespacegbase.html#a82f554a0f787d6d775ebe6e0b240ae50',1,'gbase::GZipper()']]],
+  ['gzipper_2ehpp_36',['gzipper.hpp',['../gzipper_8hpp.html',1,'']]],
+  ['gzipper_3c_20std_3a_3aranges_3a_3aiota_5fview_3c_20integer_2c_20integer_20_3e_2c_20range_20_3e_37',['GZipper&lt; std::ranges::iota_view&lt; Integer, Integer &gt;, Range &gt;',['../classgbase_1_1_g_zipper.html',1,'gbase']]]
 ];

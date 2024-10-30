@@ -108,6 +108,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A specialization of the std::map.  <a href="classgbase_1_1_g_dictionary.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbase_1_1_g_enumerate.html">GEnumerate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mimics python's enumerate.  <a href="classgbase_1_1_g_enumerate.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgbase_1_1_g_exception_info.html">GExceptionInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Captures the message and name of given exception.  <a href="structgbase_1_1_g_exception_info.html#details">More...</a><br /></td></tr>
@@ -126,6 +127,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbase_1_1_g_vector.html">GVector</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template class based on std::vector but with some additions and modificatons.  <a href="classgbase_1_1_g_vector.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgbase_1_1_g_zipper.html">GZipper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zips two ranges together.  <a href="classgbase_1_1_g_zipper.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
@@ -219,6 +223,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a21d2c600b859b8d0aa6f15588bf9c90d" id="r_a21d2c600b859b8d0aa6f15588bf9c90d"><td class="memTemplParams" colspan="2">template&lt;typename Type &gt; </td></tr>
 <tr class="memitem:a21d2c600b859b8d0aa6f15588bf9c90d"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a21d2c600b859b8d0aa6f15588bf9c90d">operator&lt;&lt;</a> (std::ostream &amp;s, const <a class="el" href="classgbase_1_1_g_vector.html">GVector</a>&lt; Type &gt; &amp;v)</td></tr>
 <tr class="separator:a21d2c600b859b8d0aa6f15588bf9c90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f554a0f787d6d775ebe6e0b240ae50" id="r_a82f554a0f787d6d775ebe6e0b240ae50"><td class="memTemplParams" colspan="2">template&lt;typename Range1 , typename Range2 &gt; </td></tr>
+<tr class="memitem:a82f554a0f787d6d775ebe6e0b240ae50"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a82f554a0f787d6d775ebe6e0b240ae50">GZipper</a> (Range1, Range2) -&gt; GZipper&lt; Range1, Range2 &gt;</td></tr>
+<tr class="separator:a82f554a0f787d6d775ebe6e0b240ae50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -478,6 +485,29 @@ template&lt;typename... Args&gt; </div>
 </div><div class="memdoc">
 
 <p>Erases the subString from the target string. </p>
+
+</div>
+</div>
+<a id="a82f554a0f787d6d775ebe6e0b240ae50" name="a82f554a0f787d6d775ebe6e0b240ae50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f554a0f787d6d775ebe6e0b240ae50">&#9670;&#160;</a></span>GZipper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Range1 , typename Range2 &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">gbase::GZipper </td>
+          <td>(</td>
+          <td class="paramtype">Range1</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Range2</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;) -&gt;  GZipper&lt; Range1, Range2 &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

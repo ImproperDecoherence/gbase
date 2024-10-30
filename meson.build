@@ -26,6 +26,7 @@ test_sources = [
     'test/gdictionarytest.cpp',
     'test/gsettest.cpp',
     'test/gvectortest.cpp',
+    'test/gzippertest.cpp',
 ]
 
 executable(

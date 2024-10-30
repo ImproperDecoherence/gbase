@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference_0',['reference',['../classgbase_1_1_g_enumerate_1_1iterator.html#af48edaa1825ac7bca507fbce0d23cf7f',1,'gbase::GEnumerate::iterator']]]
+  ['reference_0',['reference',['../classgbase_1_1_g_zipper_1_1iterator.html#a33a2dbed14ce13dfd5aae65d214854e0',1,'gbase::GZipper::iterator']]]
 ];
