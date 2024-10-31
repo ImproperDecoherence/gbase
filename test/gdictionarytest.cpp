@@ -32,18 +32,16 @@ GTEST(GDictionaryTest) {
     const String expectedPrint{"[7: seven, 11: eleven, 21: twentyone]"};
     GCHECK("Stream", ss.str(), expectedPrint);
 
-    auto v1 = d1.keyVector();
+    GVector<Integer> v1{d1.keys()};
     const GVector<Integer> expectedKeys{7, 11, 21};
     GCHECK("Key vector", v1, expectedKeys);
 
-    auto v2 = d1.valueVector();
+    GVector<String> v2{d1.values()};
     const GVector<String> expectedValues = {String{"seven"}, String{"eleven"}, String{"twentyone"}};
     GCHECK("Key vector", v2, expectedValues);
 
     auto key = d1.findKeyOfValue(String("eleven"));
     GCHECK("Key of value 1", *key, 11);
-
-    
 }
 
 } // namespace gbase::test

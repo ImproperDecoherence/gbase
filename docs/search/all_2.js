@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['char_0',['Char',['../namespacegbase.html#a58595f33d64d3343347423ed92a8dcce',1,'gbase']]],
+  ['char_0',['Char',['../namespacegbase.html#ac5cf5584caf0e2e9163325c16daf4f39',1,'gbase']]],
   ['class_5fname_1',['CLASS_NAME',['../gtypetools_8hpp.html#aa39348f0da18aa5fff64cd427125305a',1,'gtypetools.hpp']]],
   ['clearfilter_2',['clearFilter',['../classgbase_1_1_g_logger.html#a0a8d5bba5430663285363532e40f97ad',1,'gbase::GLogger']]],
   ['combinations_3',['combinations',['../namespacegbase.html#afa0167cc23b23713ebe31d7b78b63fec',1,'gbase']]],

@@ -95,22 +95,6 @@ template <typename Key, typename Value> class GDictionary : private std::map<Key
     constexpr auto values() { return *this | std::ranges::views::values; }
 
     /**
-     * @brief Returns a vector with all keys.
-     */
-    constexpr GVector<Key> keyVector() const {
-        auto v = keys() | std::ranges::to<std::vector<Key>>();
-        return GVector<Key>{v};
-    }
-
-    /**
-     * @brief Returns a vector with all values.
-     */
-    constexpr GVector<Value> valueVector() const {
-        auto v = values() | std::ranges::to<std::vector<Value>>();
-        return GVector<Value>{v};
-    }
-
-    /**
      * @brief Searches for the first key with given value.
      * @return The found key as a std::optional, or std::nullopt if no key was found.
      */
