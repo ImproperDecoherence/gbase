@@ -32,4 +32,4 @@ concept IsRangeOfRangeOf =
 template <typename InputIt, typename Type>
 concept InputIteratorOf = std::input_iterator<InputIt> && std::same_as<std::iter_value_t<InputIt>, Type>;
 
-}
+} // namespace gbase

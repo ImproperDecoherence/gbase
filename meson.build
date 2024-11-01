@@ -20,6 +20,8 @@ test_sources = [
     'test/galgorithmstest.cpp',
     'test/genumeratetest.cpp',
     'test/gdictionarytest.cpp',
+    'test/ggeometrytest.cpp',
+    'test/gramptest.cpp',
     'test/gsettest.cpp',
     'test/gvectortest.cpp',
     'test/gzippertest.cpp',
