@@ -12,6 +12,20 @@
 
 namespace gbase {
 
+constexpr Integer nextFactor(const Integer number, Integer factor) {
+    while (number % factor != 0) {
+        ++factor;
+    }
+    return factor;
+}
+
+constexpr Integer previousFactor(const Integer number, Integer factor) {
+    while ((factor > 0) && (number % factor != 0)) {
+        --factor;
+    }
+    return factor;
+}
+
 /**
  * @brief Finds all combinations of the input values.
  *
