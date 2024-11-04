@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unsigned_0',['Unsigned',['../namespacegbase.html#a5ccf859be8bf2eb7cbaa23902231f1c7',1,'gbase']]]
+  ['unsigned_0',['Unsigned',['../namespacegbase.html#a548f4546167ff0540aa548c335b66afb',1,'gbase']]]
 ];

@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['gdictionary_0',['GDictionary',['../classgbase_1_1_g_dictionary.html#acaa4d62f240a8d4bb8baf00bd34d0fe7',1,'gbase::GDictionary::GDictionary(std::initializer_list&lt; std::pair&lt; const Key, Value &gt; &gt; initList)'],['../classgbase_1_1_g_dictionary.html#a6c9b02f471daadc81a7a8fe57f036f30',1,'gbase::GDictionary::GDictionary(const std::map&lt; Key, Value &gt; &amp;m)'],['../classgbase_1_1_g_dictionary.html#ab5b5edc68450ae9b89d9d98ddd9781e1',1,'gbase::GDictionary::GDictionary()=default']]],
-  ['genumerate_1',['GEnumerate',['../classgbase_1_1_g_enumerate.html#a80aa3e3c339e23497f7ae92f0e447547',1,'gbase::GEnumerate::GEnumerate()'],['../namespacegbase.html#aa08f60ab177b1e44a495d2030a2c7a35',1,'gbase::GEnumerate()']]],
-  ['getinstance_2',['getInstance',['../classgbase_1_1_g_logger.html#a75fd8bb95fa2652e1829d466c4abe9d4',1,'gbase::GLogger']]],
-  ['gexceptioninfo_3',['GExceptionInfo',['../structgbase_1_1_g_exception_info.html#aeca33ef7de962271fe26bad8c033d4cc',1,'gbase::GExceptionInfo']]],
-  ['glocallogfilter_4',['GLocalLogFilter',['../classgbase_1_1_g_local_log_filter.html#aed6e6433e5f20c62afc2e148f68b94f9',1,'gbase::GLocalLogFilter']]],
-  ['glocalloglevel_5',['GLocalLogLevel',['../classgbase_1_1_g_local_log_level.html#a284c0141cbad4396227a45f54e284328',1,'gbase::GLocalLogLevel']]],
-  ['gset_6',['GSet',['../classgbase_1_1_g_set.html#ac2cf9858926c77b2696fe66a13cfd2d7',1,'gbase::GSet::GSet(InputIt first, InputIt last)'],['../classgbase_1_1_g_set.html#a4d620e2c69d916b6fc3ac567a42e20f9',1,'gbase::GSet::GSet(Range &amp;&amp;range)'],['../classgbase_1_1_g_set.html#a76f043b878b3f6ba2237170e315208d5',1,'gbase::GSet::GSet(const Range &amp;range)'],['../classgbase_1_1_g_set.html#a27980de0b1b70a94460d69fdf7733098',1,'gbase::GSet::GSet(std::initializer_list&lt; Type &gt; initList)']]],
-  ['gvector_7',['GVector',['../classgbase_1_1_g_vector.html#a3d280316791206633fd10a9339f8d161',1,'gbase::GVector::GVector(std::initializer_list&lt; Type &gt; initList)'],['../classgbase_1_1_g_vector.html#a1c97c9cdb2a73aa7d4d0183e55985f17',1,'gbase::GVector::GVector(InputIt first, InputIt last)'],['../classgbase_1_1_g_vector.html#a3aa720b0f844ea151d53c3dcfef4b35e',1,'gbase::GVector::GVector(const Range &amp;range)']]],
-  ['gzipper_8',['GZipper',['../classgbase_1_1_g_zipper.html#ad00cd5c89a18b3728c83d39e360cc486',1,'gbase::GZipper::GZipper()'],['../namespacegbase.html#a82f554a0f787d6d775ebe6e0b240ae50',1,'gbase::GZipper()']]]
+  ['find_0',['find',['../classgbase_1_1_g_vector.html#a3a890769f5a30c41fe47e43687b08ea9',1,'gbase::GVector']]],
+  ['findkeyofvalue_1',['findKeyOfValue',['../classgbase_1_1_g_dictionary.html#aa9838f43c85c592b26be25e299cea1e1',1,'gbase::GDictionary']]]
 ];

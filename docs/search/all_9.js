@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_0',['LogLevel',['../classgbase_1_1_g_logger.html#ad5211f514d126717dab3d68c12b1877c',1,'gbase::GLogger']]]
+  ['keys_0',['keys',['../classgbase_1_1_g_dictionary.html#a776846969af3f98efffe93de2f32b79e',1,'gbase::GDictionary']]]
 ];

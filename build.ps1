@@ -108,7 +108,7 @@ function Compile {
 # Function to run the tests
 function Test {
     Write-Host "Running the tests..."
-    ./builddir/runtests.exe
+    ./builddir/run_tests.exe
 }
 
 # Function to run the application

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['magenta_0',['Magenta',['../namespacegbase_1_1_cout_color.html#a5eb56d3177c802ec3a8c4ef6a22be48a',1,'gbase::CoutColor']]],
-  ['message_1',['message',['../structgbase_1_1_g_exception_info.html#a695476963430f5af3d5dbdc9d1359b88',1,'gbase::GExceptionInfo']]]
+  ['east_0',['East',['../namespacegbase_1_1_azimuth.html#aa0667f6d154cefa4149ba44dcfcc4d60',1,'gbase::Azimuth']]],
+  ['elevation_1',['elevation',['../structgbase_1_1_g_polar_direction3_d.html#ad21805c08e6f3a141b12513608a89d7a',1,'gbase::GPolarDirection3D']]]
 ];

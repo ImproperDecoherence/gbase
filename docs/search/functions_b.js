@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rotate_0',['rotate',['../classgbase_1_1_g_vector.html#a0d189f806bf689d43693179b49799a8a',1,'gbase::GVector']]]
+  ['nextfactor_0',['nextFactor',['../namespacegbase.html#a5e6f8aa04de8cbe0c13dc4f21f53a418',1,'gbase']]]
 ];

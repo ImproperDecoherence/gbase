@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['_7egdictionary_0',['~GDictionary',['../classgbase_1_1_g_dictionary.html#a38544877200b30c5a3205bb4cc640f0d',1,'gbase::GDictionary']]],
-  ['_7eglocallogfilter_1',['~GLocalLogFilter',['../classgbase_1_1_g_local_log_filter.html#a28024770aed051d764536b847cee6867',1,'gbase::GLocalLogFilter']]],
-  ['_7eglocalloglevel_2',['~GLocalLogLevel',['../classgbase_1_1_g_local_log_level.html#a4d1582286152c135639d587223244742',1,'gbase::GLocalLogLevel']]],
-  ['_7egset_3',['~GSet',['../classgbase_1_1_g_set.html#a3d652509c660616280bc2e4b98847a63',1,'gbase::GSet']]],
-  ['_7egvector_4',['~GVector',['../classgbase_1_1_g_vector.html#a1422b54c3894d05d42affa25ed7fb799',1,'gbase::GVector']]]
+  ['typename_0',['typeName',['../namespacegbase.html#abb170d5df6e0d10e43bfb9082f86fe6c',1,'gbase']]],
+  ['typetostring_1',['typeToString',['../namespacegbase.html#ac783a48b700a6a4ab8074bde1460b3d4',1,'gbase::typeToString(const Type &amp;toConvert)'],['../namespacegbase.html#a7aa5f485825df2e7a2a54cdecc5ee26d',1,'gbase::typeToString(const bool &amp;toConvert)']]]
 ];

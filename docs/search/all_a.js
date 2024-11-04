@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['magenta_0',['Magenta',['../namespacegbase_1_1_cout_color.html#a5eb56d3177c802ec3a8c4ef6a22be48a',1,'gbase::CoutColor']]],
-  ['maxsize_1',['maxSize',['../classgbase_1_1_g_dictionary.html#a7c0c17e68c4a654389025092b8dbcc53',1,'gbase::GDictionary::maxSize()'],['../classgbase_1_1_g_set.html#a82b6803f440530ca649361085c04d67e',1,'gbase::GSet::maxSize()'],['../classgbase_1_1_g_vector.html#a37162e4392981d29f9c1bcb61f2eba15',1,'gbase::GVector::maxSize()']]],
-  ['message_2',['message',['../structgbase_1_1_g_exception_info.html#a695476963430f5af3d5dbdc9d1359b88',1,'gbase::GExceptionInfo']]]
+  ['limit_0',['limit',['../namespacegbase.html#a660418c4eebdbb76f18ef4481096e26c',1,'gbase']]],
+  ['linearrange_1',['linearRange',['../namespacegbase.html#a100db7df7488422321ba8602dc177d0f',1,'gbase::linearRange(Type begin, Type end, gbase::Integer numberOfSteps)'],['../namespacegbase.html#a7430fe910313b254b72f808ec9eb1a22',1,'gbase::linearRange(Type begin, Type end, Type stepSize)']]],
+  ['loglevel_2',['LogLevel',['../classgbase_1_1_g_logger.html#ad5211f514d126717dab3d68c12b1877c',1,'gbase::GLogger']]]
 ];

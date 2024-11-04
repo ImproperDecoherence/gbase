@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type_0',['type',['../structgbase_1_1_g_exception_info.html#af9fd1ab0bfe246378f8bf163199ce3a4',1,'gbase::GExceptionInfo']]]
+  ['horizontal_0',['Horizontal',['../namespacegbase_1_1_elevation.html#a8d544eb73b5af3f5d93cfb1b4ef3d599',1,'gbase::Elevation']]]
 ];

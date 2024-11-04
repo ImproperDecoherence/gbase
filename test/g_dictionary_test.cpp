@@ -1,0 +1,47 @@
+#include <sstream>
+
+#include "g_dictionary.hpp"
+#include "g_exceptions.hpp"
+#include "g_test_framework.hpp"
+
+namespace gbase::test {
+
+GTEST(GDictionaryTest) {
+    const GDictionary<Integer, String> d1{{7, "seven"}, {11, "eleven"}, {21, "twentyone"}};
+
+    GCHECK("Const access 1", d1[7], String("seven"));
+    GCHECK("Const access 1", d1[21], String("twentyone"));
+
+    GCHECK("Size", d1.size(), Size{3});
+
+    auto d2{d1};
+    d2[11] = "ELEVEN";
+    GCHECK("Non-const access", d2[11], String("ELEVEN"));
+
+    bool outOfRange{false};
+    try {
+        auto value = d1[77];
+    } catch (GOutOfRange &exep) {
+        outOfRange = true;
+    } catch (...) {
+    }
+    GCHECK("Out of range", outOfRange, true);
+
+    std::stringstream ss{""};
+    ss << d1;
+    const String expectedPrint{"[7: seven, 11: eleven, 21: twentyone]"};
+    GCHECK("Stream", ss.str(), expectedPrint);
+
+    GVector<Integer> v1{d1.keys()};
+    const GVector<Integer> expectedKeys{7, 11, 21};
+    GCHECK("Key vector", v1, expectedKeys);
+
+    GVector<String> v2{d1.values()};
+    const GVector<String> expectedValues = {String{"seven"}, String{"eleven"}, String{"twentyone"}};
+    GCHECK("Key vector", v2, expectedValues);
+
+    auto key = d1.findKeyOfValue(String("eleven"));
+    GCHECK("Key of value 1", *key, 11);
+}
+
+} // namespace gbase::test
