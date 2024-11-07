@@ -18,6 +18,7 @@ test_includes = []
 
 test_sources = [
     'test/g_algorithms_test.cpp',
+    'test/g_circular_buffers_test.cpp',
     'test/g_enumerate_test.cpp',
     'test/g_dictionary_test.cpp',
     'test/g_geometry_test.cpp',    
