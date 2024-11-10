@@ -29,6 +29,9 @@ GTEST(GSetTest) {
     const GSet extendVector{'E', 'F'};
     toBeExtended += extendVector;
     GCHECK("Extend 2", toBeExtended, GSet{'A', 'B', 'C', 'D', 'E', 'F'});
+
+    GCHECK("distance 1", toBeExtended.distance('D'), 3);
+    GCHECK("distance 1", toBeExtended.distance('H'), -1);
 }
 
 } // namespace gbase::test

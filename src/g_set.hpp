@@ -163,6 +163,23 @@ template <typename Type> class GSet : private std::set<Type> {
     }
 
     /**
+     * @brief Searches for a value in the vector.
+     * @return The index of the first value found, or -1 if the value was not found.
+     */
+    constexpr Integer distance(const Type &value) const {
+
+        Integer index = 0;
+        for (const auto &v : *this) {
+            if (v == value) {
+                return index;
+            }
+            ++index;
+        }
+
+        return -1;
+    }
+
+    /**
      * @brief Prints a text representaion of the set.
      */
     void constexpr print(std::ostream &target) const {
