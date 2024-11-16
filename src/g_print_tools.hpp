@@ -3,6 +3,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <type_traits>
 #include <vector>
 
 #include "g_basic_types.hpp"
@@ -61,6 +62,21 @@ constexpr void printTableRow(const std::vector<Integer> &columnWidths, const std
     std::cout << std::endl;
 
     std::cout.flags(savedCoutFlags); // restore cout formatting
+}
+
+template <typename T> void printPointer(std::ostream &os, const T *ptr) {
+    static_assert(std::is_pointer<T *>::value, "Input must be a pointer.");
+
+    // Save the current stream format
+    auto flags = os.flags(); // Save format flags
+    auto fill = os.fill();   // Save fill character
+
+    os << std::hex << std::showbase << std::internal << std::setw(sizeof(void *) * 2 + 2) << std::setfill('0')
+       << (uintptr_t)ptr;
+
+    // Restore the original stream format
+    os.flags(flags); // Restore format flags
+    os.fill(fill);   // Restore fill character
 }
 
 } // namespace gbase

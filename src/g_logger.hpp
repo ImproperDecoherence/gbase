@@ -180,6 +180,8 @@ class GLocalLogFilter {
     vector<String> previousLogFilter_;
 };
 
+} // namespace gbase
+
 /**
  * @def GLOG_INFO(...)
  * @brief Captures the file name, the method/function name and given parameters in an info log message with
@@ -191,11 +193,11 @@ class GLocalLogFilter {
  * @endcode
  */
 #define GLOG_INFO(...)                                                                                       \
-    if (GLogger::getInstance().currentLogLevel() >= GLogger::LogLevel::Normal) {                             \
+    if (gbase::GLogger::getInstance().currentLogLevel() >= gbase::GLogger::LogLevel::Normal) {               \
         std::ostringstream oss;                                                                              \
         oss << __FILE__ << " | " << __func__ << " | ";                                                       \
-        oss << concatToString(__VA_ARGS__);                                                                  \
-        GLogger::getInstance().info(oss.str(), GLogger::LogLevel::Normal);                                   \
+        oss << gbase::concatToString(__VA_ARGS__);                                                           \
+        gbase::GLogger::getInstance().info(oss.str(), gbase::GLogger::LogLevel::Normal);                     \
     }
 
 /**
@@ -209,11 +211,11 @@ class GLocalLogFilter {
  * @endcode
  */
 #define GLOG_DETAILS(...)                                                                                    \
-    if (GLogger::getInstance().currentLogLevel() >= GLogger::LogLevel::Details) {                            \
+    if (gbase::GLogger::getInstance().currentLogLevel() >= gbase::GLogger::LogLevel::Details) {              \
         std::ostringstream oss;                                                                              \
         oss << __FILE__ << " | " << __func__ << " | ";                                                       \
-        oss << concatToString(__VA_ARGS__);                                                                  \
-        GLogger::getInstance().info(oss.str(), GLogger::LogLevel::Details);                                  \
+        oss << gbase::concatToString(__VA_ARGS__);                                                           \
+        gbase::GLogger::getInstance().info(oss.str(), gbase::GLogger::LogLevel::Details);                    \
     }
 
 /**
@@ -230,8 +232,6 @@ class GLocalLogFilter {
     {                                                                                                        \
         std::ostringstream oss;                                                                              \
         oss << __FILE__ << " | " << __func__ << " | ";                                                       \
-        oss << concatToString(__VA_ARGS__);                                                                  \
-        GLogger::getInstance().warning(oss.str(), GLogger::LogLevel::Normal);                                \
+        oss << gbase::concatToString(__VA_ARGS__);                                                           \
+        gbase::GLogger::getInstance().warning(oss.str(), gbase::GLogger::LogLevel::Normal);                  \
     }
-
-} // namespace gbase

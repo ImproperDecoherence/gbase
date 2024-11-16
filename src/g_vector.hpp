@@ -60,6 +60,7 @@ template <typename Type> class GVector : private std::vector<Type> {
     using base::crend;
     using base::data;
     using base::emplace;
+    using base::emplace_back;
     using base::empty;
     using base::end;
     using base::erase;

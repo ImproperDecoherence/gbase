@@ -1,9 +1,21 @@
 
 #pragma once
 
+#include <algorithm>
+#include <ranges>
 #include <string>
 
 namespace gbase {
+
+constexpr String underscoreToSpace(String in) {
+    std::replace(in.begin(), in.end(), '_', ' ');
+    return in;
+}
+
+constexpr String backslashToSlash(String in) {
+    std::replace(in.begin(), in.end(), '\\', '/');
+    return in;
+}
 
 /**
  * @brief Converts all given arguments to strings and concatenate them to one string.
@@ -24,4 +36,4 @@ void constexpr eraseSubString(String &target, const String &subString) {
     }
 }
 
-}
+} // namespace gbase
