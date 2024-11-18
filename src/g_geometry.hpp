@@ -102,26 +102,32 @@ constexpr double operator*(const GPolarDirection3D &a, const GPolarDirection3D &
 
 class GDirection3D {
   public:
+    GDirection3D() = default;
     GDirection3D(Radians azimuth, Radians elevation)
         : cartDir_{polarToCartesian(GPolarDirection3D{azimuth, elevation})} {};
     GDirection3D(const GPolarDirection3D &polarDir) : cartDir_{polarToCartesian(polarDir)} {}
     GDirection3D(const GCartesianVector3D &cartDir) : cartDir_{cartDir} {}
 
-    constexpr double operator*(const GDirection3D &rhs) const { return cartDir_ * rhs.cartDir_; };
+    double operator*(const GDirection3D &rhs) const { return cartDir_ * rhs.cartDir_; };
 
-    constexpr const GCartesianVector3D &cartesian() const { return cartDir_; }
-    constexpr GPolarDirection3D polar() const { return cartesianToPolarDirection(cartDir_); }
+    const GCartesianVector3D &cartesian() const { return cartDir_; }
+    GPolarDirection3D polar() const { return cartesianToPolarDirection(cartDir_); }
 
-    constexpr void setElevation(Radians elevation) {
+    void setElevation(Radians elevation) {
         GPolarDirection3D updatedPolar = polar();
         updatedPolar.elevation = elevation;
         cartDir_ = polarToCartesian(updatedPolar);
     }
 
-    constexpr void setAzimuth(Radians azimuth) {
+    void setAzimuth(Radians azimuth) {
         GPolarDirection3D updatedPolar = polar();
         updatedPolar.azimuth = azimuth;
         cartDir_ = polarToCartesian(updatedPolar);
+    }
+
+    GDirection3D rotated(Radians deltaAzimuth, Radians deltaElevation) const {
+        const auto [azimuth, elevation] = polar();
+        return GDirection3D{azimuth + deltaAzimuth, elevation + deltaElevation};
     }
 
   private:
