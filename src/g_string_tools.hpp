@@ -2,6 +2,7 @@
 #pragma once
 
 #include <algorithm>
+#include <optional>
 #include <ranges>
 #include <string>
 
@@ -15,6 +16,15 @@ constexpr String underscoreToSpace(String in) {
 constexpr String backslashToSlash(String in) {
     std::replace(in.begin(), in.end(), '\\', '/');
     return in;
+}
+
+template <typename T> std::ostream &operator<<(std::ostream &os, const std::optional<T> &opt) {
+    if (opt.has_value()) {
+        os << *opt;
+    } else {
+        os << "none";
+    }
+    return os;
 }
 
 /**

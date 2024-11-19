@@ -12,8 +12,9 @@ namespace gbase::test {
 class TestSubjectI {
   public:
     virtual ~TestSubjectI() = default;
-    virtual GConnector<TestSubjectI, String> &messageConnector() = 0;
-    virtual GConnector<TestSubjectI, Integer> &countConnector() = 0;
+    virtual G0PConnector<TestSubjectI> &notifyConnector() = 0;
+    virtual G1PConnector<TestSubjectI, String> &messageConnector() = 0;
+    virtual G1PConnector<TestSubjectI, Integer> &countConnector() = 0;
     virtual const String &name() const = 0;
 };
 
@@ -32,6 +33,9 @@ class TestObserver : public GConnectable {
     }
 
     void reconnect() {
+        notifyConnection.disconnect();
+        notifyConnection.connect(subject_->notifyConnector(), this, TestObserver::subjectChanged);
+
         messageConnection.disconnect();
         messageConnection.connect(subject_->messageConnector(), this, TestObserver::messageChanged);
 
@@ -41,6 +45,8 @@ class TestObserver : public GConnectable {
 
     TestObserver &operator=(TestObserver &&) = default;
 
+    void subjectChanged(TestSubjectI *subject) { notifications.push_back(subject->name()); }
+
     void messageChanged(TestSubjectI *subject, const String &message) {
         messages.push_back(subject->name() + ":" + message);
     }
@@ -49,9 +55,11 @@ class TestObserver : public GConnectable {
         counts.push_back(subject->name() + ":" + std::to_string(count));
     }
 
-    GAutoConnection<TestSubjectI, String> messageConnection;
-    GAutoConnection<TestSubjectI, Integer> countConnection;
+    G0PAutoConnection<TestSubjectI> notifyConnection;
+    G1PAutoConnection<TestSubjectI, String> messageConnection;
+    G1PAutoConnection<TestSubjectI, Integer> countConnection;
 
+    std::vector<String> notifications;
     std::vector<String> messages;
     std::vector<String> counts;
 
@@ -63,12 +71,14 @@ class TestSubject : public TestSubjectI {
     explicit TestSubject(const String &name) : name_{name} {}
     virtual ~TestSubject() = default;
 
-    GConnector<TestSubjectI, String> &messageConnector() override { return messageConnections; }
-    GConnector<TestSubjectI, Integer> &countConnector() override { return countConnections; }
+    G0PConnector<TestSubjectI> &notifyConnector() override { return theNotifyConnector; }
+    G1PConnector<TestSubjectI, String> &messageConnector() override { return theMessageConnector; }
+    G1PConnector<TestSubjectI, Integer> &countConnector() override { return theCountConnector; }
     const String &name() const override { return name_; };
 
-    GConnector<TestSubjectI, String> messageConnections;
-    GConnector<TestSubjectI, Integer> countConnections;
+    G0PConnector<TestSubjectI> theNotifyConnector;
+    G1PConnector<TestSubjectI, String> theMessageConnector;
+    G1PConnector<TestSubjectI, Integer> theCountConnector;
 
   private:
     String name_;
@@ -81,16 +91,24 @@ GTEST(GConnectionsTest) {
     observers.emplace_back(TestObserver{&subject});
     observers.emplace_back(TestObserver{&subject});
 
-    GCHECK("number message observers", subject.messageConnections.connectionCount(), observers.size());
-    GCHECK("number count observers", subject.countConnections.connectionCount(), observers.size());
+    GCHECK("number message observers", subject.theMessageConnector.connectionCount(), observers.size());
+    GCHECK("number count observers", subject.theCountConnector.connectionCount(), observers.size());
+
+    subject.theNotifyConnector.notify(&subject);
+    subject.theNotifyConnector.notify(&subject);
+    subject.theNotifyConnector.notify(&subject);
 
     const String hello{"Hello!"};
-    subject.messageConnections.emit(&subject, hello);
+    subject.theMessageConnector.notify(&subject, hello);
 
-    subject.countConnections.emit(&subject, 7);
-    subject.countConnections.emit(&subject, 9);
+    subject.theCountConnector.notify(&subject, 7);
+    subject.theCountConnector.notify(&subject, 9);
 
     for (auto &observer : observers) {
+        GCHECK("", observer.notifications.size(), Size{3});
+        GCHECK("", observer.notifications[0], String{"Subject"});
+        GCHECK("", observer.notifications[1], String{"Subject"});
+        GCHECK("", observer.notifications[2], String{"Subject"});
 
         GCHECK("", observer.messages.size(), Size{1});
         GCHECK("", observer.counts.size(), Size{2});
@@ -101,10 +119,10 @@ GTEST(GConnectionsTest) {
     }
 
     observers.clear();
-    GCHECK("number message observers", subject.messageConnections.connectionCount(), Size{0});
-    GCHECK("number count observers", subject.countConnections.connectionCount(), Size{0});
+    GCHECK("number message observers", subject.theMessageConnector.connectionCount(), Size{0});
+    GCHECK("number count observers", subject.theCountConnector.connectionCount(), Size{0});
 
-    subject.messageConnections.emit(&subject, hello);
+    subject.theMessageConnector.notify(&subject, hello);
 }
 
 } // namespace gbase::test
