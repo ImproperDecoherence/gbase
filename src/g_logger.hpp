@@ -7,6 +7,7 @@
 #include "g_basic_types.hpp"
 #include "g_print_tools.hpp"
 #include "g_string_tools.hpp"
+#include "g_time.hpp"
 
 using namespace std;
 
@@ -38,6 +39,8 @@ class GLogger {
         static GLogger instance;
         return instance;
     }
+
+    void showTimestamp(bool show) { timestamp_ = show; }
 
     /**
      * @brief Set the logging level. Default is LogLevel::Normal.
@@ -91,6 +94,9 @@ class GLogger {
             return;
 
         if (matchLogFilter(message)) {
+            if (timestamp_) {
+                cout << gbase::GUTCTime::now().timeOfDay().toString() << " | ";
+            }
             cout << CoutColor::Green;
             cout << "INFO: ";
             cout << CoutColor::Reset;
@@ -110,6 +116,7 @@ class GLogger {
 
         if (matchLogFilter(message)) {
             cout << CoutColor::Yellow;
+            cout << timestamp_ ? (gbase::GUTCTime::now().timeOfDay().toString() + " ") : "";
             cout << "WARNING: ";
             cout << CoutColor::Reset;
             cout << message << endl;
@@ -134,6 +141,7 @@ class GLogger {
 
     LogLevel currentLogLevel_ = LogLevel::Normal;
     vector<String> logFilter_;
+    bool timestamp_{true};
 };
 
 /**

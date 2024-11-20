@@ -26,6 +26,7 @@ test_sources = [
     'test/g_geometry_test.cpp',
     'test/g_ranges_test.cpp',
     'test/g_set_test.cpp',
+    'test/g_time_test.cpp',
     'test/g_vector_test.cpp',
     'test/g_zipper_test.cpp',
 ]
