@@ -2,6 +2,7 @@
 
 #include "g_circular_buffers.hpp"
 #include "g_test_framework.hpp"
+#include "g_vector.hpp"
 
 using namespace std;
 using namespace gbase;

@@ -1,18 +1,21 @@
 #pragma once
 
-#include "g_vector.hpp"
+#include <iterator>
 
 namespace gbase {
 
-template <typename Type> class GCircularVectorIterator {
+template <typename Container> class GCircularVectorIterator {
 
   public:
-    explicit GCircularVectorIterator(const GVector<Type> &v)
-        : begin_{v.begin()}, iter_{v.begin()}, end_{v.end()} {}
+    using Iterator = typename Container::const_iterator;
+    using ValueType = typename Container::value_type;
 
-    constexpr const Type &operator*() const { return *iter_; }
+    explicit GCircularVectorIterator(const Container &container)
+        : begin_{std::cbegin(container)}, iter_{std::cbegin(container)}, end_{std::cend(container)} {}
 
-    GCircularVectorIterator operator++() {
+    constexpr const ValueType &operator*() const { return *iter_; }
+
+    GCircularVectorIterator &operator++() {
         ++iter_;
         if (iter_ == end_) {
             iter_ = begin_;
@@ -27,9 +30,9 @@ template <typename Type> class GCircularVectorIterator {
     }
 
   private:
-    typename GVector<Type>::const_iterator begin_;
-    typename GVector<Type>::const_iterator iter_;
-    typename GVector<Type>::const_iterator end_;
+    Iterator begin_;
+    Iterator iter_;
+    Iterator end_;
 };
 
 } // namespace gbase
