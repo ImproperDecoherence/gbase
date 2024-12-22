@@ -78,12 +78,14 @@ template <typename Type> class GSet : private std::set<Type> {
     using base::find;
     using base::get_allocator;
     using base::insert;
+    using base::lower_bound;
     using base::max_size;
     using base::merge;
     using base::rbegin;
     using base::rend;
     using base::size;
     using base::swap;
+    using base::upper_bound;
 
     constexpr auto operator<=>(const GSet &other) const = default;
     constexpr bool operator==(const GSet &other) const = default;
